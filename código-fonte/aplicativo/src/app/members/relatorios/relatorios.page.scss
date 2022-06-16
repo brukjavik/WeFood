@@ -1,0 +1,53 @@
+.toolbarModel {
+    --background: rgb(237, 237, 237);
+}
+
+.iconezin {
+    color: red;
+}
+
+.background {
+    background: rgb(237, 237, 237);
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.centralizadora{
+
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.nomezin{
+
+    font-size: 14pt;
+}
+
+.butaozineo {
+    --background: red;
+    --background-activated: rgb(128, 8, 8);
+    --transition: 0.5s;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.butaozineo2 {
+    display: inline-block;
+    --background: red;
+    --background-activated: rgb(128, 8, 8);
+    --transition: 0.5s;
+    font-size: 12pt;
+}
+
+.nomezin2{
+    margin-bottom: 5%;
+    font-size: 14pt;
+}
+
+.contente {
+    --background: rgb(237, 237, 237);
+}
+  

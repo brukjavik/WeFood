@@ -1,0 +1,58 @@
+<ion-header>
+  <div *ngIf="tipo === 0">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-button class="butaozao" routerLink="/members/carrinho" slot="end">
+        <ion-icon class="iconezin" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+
+      <ion-title>Meus Pedidos</ion-title>
+    </ion-toolbar>
+  </div>
+
+  <div *ngIf="tipo === 1">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-title>Pedidos do restaurante</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <div class="grid">
+      <label class="gryphon-heart">
+        <strong> ID </strong>
+      </label>
+      <label class="gryphon-heart">
+        <strong> Data </strong>
+      </label>
+      <label class="gryphon-heart">
+        <strong> Hora </strong>
+      </label>
+      <label>
+        <strong></strong>
+      </label>
+      <ng-container *ngFor="let numero of id">
+        <label>{{numero.id}}</label>
+        <label>{{numero.data}}</label>
+        <label>{{numero.horario}}</label>
+        <label
+          class="details"
+          [routerLink]="['/members/pedidos/pedido/', numero.id]"
+          >Detalhes</label
+        >
+      </ng-container>
+    </div>
+  </div>
+</ion-content>

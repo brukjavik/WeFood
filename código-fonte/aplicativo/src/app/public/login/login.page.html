@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div class="background">
+    <div class="logo"></div>
+    <ion-input
+      class="seguradorLugar"
+      placeholder="E-Mail"
+      [(ngModel)]="email"
+    ></ion-input>
+    <ion-input
+      class="seguradorLugar"
+      placeholder="Senha"
+      type="password"
+      [(ngModel)]="senha"
+    ></ion-input>
+    <div class="Aviso">{{check}}</div>
+    <ion-button class="butao" (click)="login()">Fazer login</ion-button>
+    <ion-button class="butao" routerLink="/register">Registrar-se</ion-button>
+  </div>
+</ion-content>

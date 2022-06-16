@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrinho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <br />
+    <div class="grid">
+      <label class="gryphon-heart">
+        <strong> Nome </strong>
+      </label>
+      <label class="gryphon-heart">
+        <strong> Preço </strong>
+      </label>
+      <label class="gryphon-heart">
+        <strong> Quantia </strong>
+      </label>
+      <label class="gryphon-heart">
+        <strong> Valor </strong>
+      </label>
+      <label>
+        <strong></strong>
+      </label>
+
+      <ng-container *ngFor="let pedido of pedidos.carrinho, let i = index">
+        <label>{{pedido.prato_nome}}</label>
+        <label>R${{pedido.preco_venda}}</label>
+        <label>{{pedido.quantidade}}</label>
+        <label>R${{pedido.preco_venda*pedido.quantidade}}</label>
+        <label
+          ><ion-button class="removeButton" (click)="quantidade(i, 0)"
+            >X</ion-button
+          ></label
+        >
+      </ng-container>
+    </div>
+
+    <div class="grid2">
+      <label *ngIf="pedidos.entrega === 0">Valor do frete (Grátis): R$0 </label>
+      <label *ngIf="pedidos.entrega === 1">Valor do frete (Rápido): R$2</label>
+    </div>
+
+    <div class="grid2">
+      <label *ngIf="pedidos.entrega === 0">Total: R${{total}} </label>
+      <label *ngIf="pedidos.entrega === 1">Total: R${{total+2}}</label>
+    </div>
+
+    <br />
+    <div class="centralizadora">
+      <ion-button class="butaoFiltro" (click)="pedido()"
+        >Confirmar pedido</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <div *ngIf="pedido != undefined">
+      <br />
+      <div class="titles">
+        Restaurante: {{pedido[0].restaurante_nome}}
+      </div>
+      <br />
+      <div class="textsizzz">
+        Número do pedido: {{pedido[0].id}} <br />
+        Data: {{pedido[0].data}} <br />
+        Hora: {{pedido[0].horario}} <br />
+      </div>
+      <br />
+      <div class="grid">
+        <label class="gryphon-heart">
+          <strong> Nome </strong>
+        </label>
+        <label class="gryphon-heart">
+          <strong> Preço </strong>
+        </label>
+        <label class="gryphon-heart">
+          <strong> Quantia </strong>
+        </label>
+        <label class="gryphon-heart">
+          <strong> Valor </strong>
+        </label>
+
+        <ng-container *ngFor="let item of pedido">
+          <label>{{item.nome_prato}}</label>
+          <label>R${{item.preco_venda}}</label>
+          <label>{{item.quantidade}}</label>
+          <label>R${{item.preco_venda*item.quantidade}}</label>
+        </ng-container>
+      </div>
+
+      <div class="grid2">
+        <label *ngIf="pedido[0].entrega === 0"
+          >Valor do frete (Grátis): R$0
+        </label>
+        <label *ngIf="pedido[0].entrega === 1"
+          >Valor do frete (Rápido): R$2</label
+        >
+      </div>
+
+      <div class="grid2">
+        <label *ngIf="pedido[0].entrega === 0">Total: R${{total}} </label>
+        <label *ngIf="pedido[0].entrega === 1">Total: R${{total+2}}</label>
+      </div>
+    </div>
+  </div>
+</ion-content>

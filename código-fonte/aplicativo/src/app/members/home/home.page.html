@@ -1,0 +1,175 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<ion-header>
+  <div *ngIf="tipo === 0">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-button class="butaozao" routerLink="/members/carrinho" slot="end">
+        <ion-icon class="iconezin" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+
+      <ion-title>Início</ion-title>
+    </ion-toolbar>
+  </div>
+
+  <div *ngIf="tipo === 1">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-title>Meu restaurante</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content class="contente">
+  <div class="background">
+    <div *ngIf="tipo === 0">
+      <div class="marginalidade"></div>
+      <div class="welcome">Bem-vindo, {{usuario.nome}}!</div>
+      <div class="address">Endereço: {{usuario.endereco}}</div>
+      <br />
+      <div class="titlemm">Os mais pedidos do We Food:</div>
+      <div class="mocado">
+        <div
+          class="wrapperNormal"
+          *ngFor="let rest of restaurantes"
+          [routerLink]="['/members/restaurante/', rest.email]"
+        >
+          <a href="#">
+            <div class="wave-1"></div>
+            <div class="wave-2"></div>
+            <span>{{rest.nome}}</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="titlemm">Promoções:</div>
+      <div class="mocado">
+        <div
+          class="wrapperNormal"
+          *ngFor="let promo of promos"
+          [routerLink]="['/members/restaurante/', promo.email]"
+        >
+          <a href="#">
+            <div class="wave-1"></div>
+            <div class="wave-2"></div>
+            <span>{{promo.nome}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="tipo === 1">
+      <div class="kai" *ngIf="rest.nome !== undefined">
+        <div class="mee">{{rest.nome}}</div>
+      </div>
+      <br />
+      <div class="address">Endereço: {{rest.endereco}}</div>
+      <br />
+      <div class="address">Categoria: {{rest.categoria}}</div>
+
+      <br />
+
+      <div class="centralizadora">
+        <ion-button class="sabordobife2" routerLink="add-prato"
+          >Adicionar prato
+        </ion-button>
+      </div>
+
+      <br />
+
+      <div class="kaka">
+        <span class="sple" *ngIf="rest.funcionamento === 1">
+          <i class="fa fa-unlock"> &nbsp; Aberto</i>
+        </span>
+      </div>
+
+      <div class="kaka">
+        <span class="sple" *ngIf="rest.funcionamento === 0">
+          <i class="fa fa-lock"> &nbsp; Fechado</i>
+        </span>
+      </div>
+
+      <div class="centralizadora">
+        <ion-button class="sabordobife" (click)="funci(rest.funcionamento)"
+          ><ion-icon class="bifa" name="repeat"></ion-icon
+        ></ion-button>
+      </div>
+
+      <br />
+
+      <div class="kaka">
+        <span class="spri" *ngIf="rest.entrega === 1">
+          <i class="fa fa-truck"> &nbsp; Rápida</i>
+        </span>
+      </div>
+
+      <div class="kaka">
+        <span class="spri" *ngIf="rest.entrega === 0">
+          <i class="fa fa-truck"> &nbsp; Grátis</i>
+        </span>
+      </div>
+
+      <div class="centralizadora">
+        <ion-button class="sabordobife" (click)="entrega(rest.entrega)"
+          ><ion-icon class="bifa" name="repeat"></ion-icon
+        ></ion-button>
+      </div>
+
+      <div class="kai">
+        <div class="wrapperPromo">
+          <a href="#">
+            <div class="wave-1"></div>
+            <div class="wave-2"></div>
+            <span>Promoções</span>
+          </a>
+        </div>
+      </div>
+
+      <div *ngFor="let prato of pratos">
+        <div *ngIf="prato.promocao === 1">
+          <span
+            class="xinela"
+            [routerLink]="['/rest/pratos/', rest.email,  prato.nome]"
+          >
+            {{prato.nome}}
+          </span>
+        </div>
+      </div>
+      <br />
+
+      <div class="kai">
+        <div class="wrapperNormal">
+          <a href="#">
+            <div class="wave-1"></div>
+            <div class="wave-2"></div>
+            <span>Menu</span>
+          </a>
+        </div>
+      </div>
+
+      <div *ngFor="let prato of pratos">
+        <div *ngIf="prato.promocao === 0">
+          <span
+            class="xinela"
+            [routerLink]="['/rest/pratos/', rest.email,  prato.nome]"
+          >
+            {{prato.nome}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

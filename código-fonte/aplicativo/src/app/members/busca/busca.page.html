@@ -1,0 +1,179 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-button class="butaozao" routerLink="/members/carrinho" slot="end">
+      <ion-icon class="iconezin" slot="icon-only" name="cart"></ion-icon>
+    </ion-button>
+    <ion-title>Busca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contente">
+  <div class="background">
+    <br />
+    <ion-input
+      class="seguradorPesquisa"
+      placeholder="Pesquise aqui"
+      [(ngModel)]="busca"
+      ><ion-icon class="xx" slot="start" name="search"></ion-icon>
+    </ion-input>
+
+    <ion-checkbox
+      class="checkzinha"
+      checked="true"
+      [(ngModel)]="restau"
+      (ionChange)="edit()"
+    ></ion-checkbox>
+
+    <div class="entregaType">Restaurantes</div>
+    <br />
+    <br />
+    <ion-checkbox
+      class="checkzinha"
+      checked="true"
+      [(ngModel)]="item"
+      (ionChange)="edit2()"
+      (click)="filter=false"
+    ></ion-checkbox>
+    <div class="entregaType">Itens</div>
+
+    <div *ngIf="restau === true">
+      <div class="xoo">
+        <ion-button class="butaoFiltro" (click)="filter = !filter">
+          <ion-icon name="options"></ion-icon>
+          <div class="t5t5">Filtros</div>
+        </ion-button>
+      </div>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp; &nbsp; &nbsp;
+      <div class="ITX">
+        <ion-button class="butonaPesquisa" (click)="filtro()"
+          >Pesquisar
+        </ion-button>
+      </div>
+    </div>
+    <br />
+    <div class="ITX" *ngIf="restau === false">
+      <ion-button class="butonaPesquisa" (click)="filtro()"
+        >Pesquisar
+      </ion-button>
+    </div>
+
+    <div *ngIf="filter === true">
+      <div class="limpaFiltroDiv">
+        <ion-button class="butonaFiltro" (click)="limpaFiltro()"
+          ><ion-icon name="close"></ion-icon>Limpar filtros</ion-button
+        >
+      </div>
+
+      <div class="entregaTypeTitle">Especiais:</div>
+      <br />
+      <ion-checkbox
+        class="checkzinha"
+        checked="true"
+        [(ngModel)]="promo"
+      ></ion-checkbox>
+      <div class="entregaType">Promoções</div>
+      <br />
+      <br />
+      <ion-checkbox
+        class="checkzinha"
+        checked="true"
+        [(ngModel)]="popular"
+      ></ion-checkbox>
+      <div class="entregaType">Restaurantes Populares</div>
+      <br />
+      <br />
+      <ion-checkbox
+        class="checkzinha"
+        checked="true"
+        [(ngModel)]="mais"
+      ></ion-checkbox>
+      <div class="entregaType">Mais pedidos We Food</div>
+      <br />
+      <br />
+
+      <div class="entregaTypeTitle">Tipo de entrega:</div>
+      <br />
+      <ion-checkbox
+        class="checkzinha"
+        checked="true"
+        [(ngModel)]="rapida"
+        (ionChange)="editEntrega()"
+      ></ion-checkbox>
+
+      <div class="entregaType">Entrega rápida</div>
+      <br />
+      <br />
+      <ion-checkbox
+        class="checkzinha"
+        checked="true"
+        [(ngModel)]="gratis"
+        (ionChange)="editEntrega2()"
+      ></ion-checkbox>
+      <div class="entregaType">Entrega grátis</div>
+      <br />
+      <br />
+
+      <ion-list>
+        <ion-radio-group [(ngModel)]="categoria">
+          <div class="titleManager">Escolha uma categoria:</div>
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Brasileira</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="brasileira"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Oriental</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="oriental"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Lanches</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="lanches"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Saudável</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="saudavel"
+            ></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+
+    <div class="titlemm">Lista de Restaurantes</div>
+    <div class="mocado">
+      <div
+        class="wrapperNormal"
+        *ngFor="let rest of restaurantes"
+        [routerLink]="['/members/restaurante/', rest.email]"
+      >
+        <a href="#">
+          <div class="wave-1"></div>
+          <div class="wave-2"></div>
+          <span>{{rest.nome}}</span>
+        </a>
+      </div>
+    </div>
+  </div></ion-content
+>

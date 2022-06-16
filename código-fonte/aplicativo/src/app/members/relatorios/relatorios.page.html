@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Relatórios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contente">
+  <div class="background">
+    <div *ngIf="rela1 != undefined">
+      <br />
+      <div class="centralizadora">Prato mais pedido:</div>
+      <br />
+      <div class="nomezin"><b>Prato: </b>{{rela1.nome}}</div>
+      <div class="nomezin">
+        <b>Número de pedidos: </b>{{rela1.pedidos}} pedido(s)
+      </div>
+    </div>
+
+    <br />
+
+    <div *ngIf="rela2_1 != undefined">
+      <div class="centralizadora">Extrato de pedidos:</div>
+      <br />
+      <ion-button class="butaozineo" (click)="um1()">1 dia</ion-button>
+      &nbsp; &nbsp; &nbsp;
+      <ion-button class="butaozineo" (click)="sete7()">7 dias</ion-button>
+      &nbsp; &nbsp; &nbsp;
+      <ion-button class="butaozineo" (click)="trinta30()">30 dias</ion-button>
+      <br />
+      <br />
+      <div *ngIf="um === true">
+        <div *ngFor="let numero of rela2_1">
+          <br />
+          <div class="nomezin2"><b>Número do pedido: </b>{{numero.id}}</div>
+          <div class="nomezin">
+            <b>Data: </b>{{numero.data}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <ion-button
+              class="butaozineo2"
+              [routerLink]="['/members/pedidos/pedido/', numero.id]"
+            >
+              Detalhes</ion-button
+            >
+          </div>
+          <div class="nomezin2"><b>Hora: </b>{{numero.horario}}</div>
+          <br />
+        </div>
+        <br />
+      </div>
+
+      <div *ngIf="sete === true">
+        <div *ngFor="let numero of rela2_7">
+          <br />
+          <div class="nomezin2"><b>Número do pedido: </b>{{numero.id}}</div>
+          <div class="nomezin">
+            <b>Data: </b>{{numero.data}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <ion-button
+              class="butaozineo2"
+              [routerLink]="['/members/pedidos/pedido/', numero.id]"
+            >
+              Detalhes</ion-button
+            >
+          </div>
+          <div class="nomezin2"><b>Hora: </b>{{numero.horario}}</div>
+          <br />
+        </div>
+        <br />
+      </div>
+
+      <div *ngIf="trinta === true">
+        <div *ngFor="let numero of rela2_30">
+          <br />
+          <div class="nomezin2"><b>Número do pedido: </b>{{numero.id}}</div>
+          <div class="nomezin">
+            <b>Data: </b>{{numero.data}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp;
+            <ion-button
+              class="butaozineo2"
+              [routerLink]="['/members/pedidos/pedido/', numero.id]"
+            >
+              Detalhes</ion-button
+            >
+          </div>
+          <div class="nomezin2"><b>Hora: </b>{{numero.horario}}</div>
+          <br />
+        </div>
+        <br />
+      </div>
+    </div>
+
+    <div *ngIf="rela3 != undefined">
+      <div class="centralizadora">
+        Preço médio dos pratos vendidos nos 7 dias anteriores:
+      </div>
+      <br />
+
+      <div *ngFor="let numero of rela3">
+        <div class="nomezin"><b>Prato: </b>{{numero.nome_prato}}</div>
+        <div class="nomezin"><b>Média de preço: </b>R${{numero.media}}</div>
+        <br />
+      </div>
+    </div>
+  </div>
+</ion-content>

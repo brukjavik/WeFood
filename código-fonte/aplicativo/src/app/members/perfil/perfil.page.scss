@@ -1,0 +1,49 @@
+.background {
+  background: rgb(237, 237, 237);
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.titlezin {
+  font-size: 15pt;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.toolbarModel {
+  --background: rgb(237, 237, 237);
+}
+
+.iconezin {
+  color: red;
+}
+
+.butaozineo {
+  color: white;
+  font-size: 16pt;
+  margin-bottom: 5%;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.4);
+  --background: red;
+  background: red;
+  font-weight: bold;
+  border-width: 1px;
+  --background-activated: rgb(151, 19, 19);
+  --transition: 0.3s;
+  margin-bottom: 6%;
+}
+
+
+.butaozao {
+  --background: rgb(237, 237, 237);
+  --background-activated: rgb(237, 237, 237);
+}
+
+.metin2{
+
+  text-align: center;
+  align-items: center;
+  margin-bottom: 5%;
+  padding-top: 5%;
+}

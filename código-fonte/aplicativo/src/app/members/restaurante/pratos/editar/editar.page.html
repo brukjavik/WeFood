@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Prato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+    <div class="centralizadora1">Nome:</div>
+    <div class="pacin">
+      <ion-input
+        class="seguradorPesquisa"
+        [(ngModel)]="prato.nome"
+        placeholder="Digite o novo nome do prato"
+      ></ion-input>
+    </div>
+    <div class="centralizadora1">Descrição:</div>
+    <div class="pacin">
+      <ion-input
+        class="seguradorPesquisa"
+        [(ngModel)]="prato.descricao"
+        placeholder="Digite a nova descrição do prato"
+      ></ion-input>
+    </div>
+    <div class="centralizadora1">Preço:</div>
+    <div class="pacin">
+      <ion-input
+        class="seguradorPesquisa"
+        [(ngModel)]="prato.preco"
+        placeholder="Digite o novo preço do prato"
+      ></ion-input>
+    </div>
+
+    <div class="centralizadora">
+      <ion-button class="butaoFiltro" (click)="salvar()">Confirmar</ion-button>
+    </div>
+  </div>
+</ion-content>

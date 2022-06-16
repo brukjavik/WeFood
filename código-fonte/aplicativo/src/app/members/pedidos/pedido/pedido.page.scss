@@ -1,0 +1,75 @@
+.toolbarModel {
+  --background: rgb(237, 237, 237);
+}
+
+.backbuttonModel {
+  --background: transparent;
+  --color: red;
+  font-size: 13pt;
+}
+
+.background {
+  background: rgb(237, 237, 237);
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.titles {
+  font-size: 16pt;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.textsizzz {
+  font-size: 14pt;
+}
+
+.grid {
+  display: grid;
+  background: #ededed;
+  background-color: #ededed;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Create 2 columns and auto-place rows */
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  align-content: center;
+  text-align: center;
+}
+
+.grid > label {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 25px;
+}
+
+.gryphon-heart {
+  font-weight: 5px;
+  font-size: 12pt;
+}
+
+.grid2 {
+  display: grid;
+  background: #ededed;
+  background-color: #ededed;
+  grid-template-columns: repeat(
+    1,
+    1fr
+  ); /* Create 2 columns and auto-place rows */
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  align-content: center;
+  text-align: center;
+  font-size: 14pt;
+}
+
+.grid2 > label {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
+}

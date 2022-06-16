@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="toolbarTitle">Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="background">
+    <div class="choice">
+      <ion-label>Escolha uma opção de cadastro:</ion-label>
+    </div>
+    <ion-segment (ionChange)="chama()" value="user">
+      <div class="segmentorganizer">
+        <ion-segment-button class="segmentbutao" value="user">
+          <ion-label>Usuário</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segmentbutao" value="food">
+          <ion-label>Restaurante</ion-label>
+        </ion-segment-button>
+      </div>
+    </ion-segment>
+
+    <div *ngIf="teste===true">
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Nome"
+        [(ngModel)]="nome"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Endereço"
+        [(ngModel)]="endereco"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="E-mail"
+        type="email"
+        [(ngModel)]="email"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Senha"
+        type="password"
+        [(ngModel)]="senha"
+      ></ion-input>
+      <div class="Aviso">{{check}}</div>
+      <ion-button class="butao" (click)="chamaRegistroCliente()"
+        >Registrar</ion-button
+      >
+    </div>
+
+    <div *ngIf="teste === false">
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Nome do restaurante"
+        [(ngModel)]="nome"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Endereço"
+        [(ngModel)]="endereco"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="E-mail"
+        type="email"
+        [(ngModel)]="email"
+      ></ion-input>
+      <ion-input
+        class="seguradorLugar"
+        placeholder="Senha"
+        type="password"
+        [(ngModel)]="senha"
+      ></ion-input>
+
+      <ion-list>
+        <ion-radio-group [(ngModel)]="categoria">
+          <ion-list-header class="itemManager">
+            <div class="titleManager">
+              <ion-label>Escolha uma categoria: </ion-label>
+            </div>
+          </ion-list-header>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Brasileira</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="brasileira"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Oriental</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="oriental"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Lanches</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="lanches"
+            ></ion-radio>
+          </ion-item>
+
+          <ion-item class="itemManager">
+            <ion-label class="labelManager">Saudável</ion-label>
+            <ion-radio
+              class="radioManager"
+              slot="start"
+              value="saudavel"
+            ></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <div class="Aviso">{{check}}</div>
+      <ion-button class="butao" (click)="chamaRegistroRestaurante()"
+        >Registrar</ion-button
+      >
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,47 @@
+.seguradorLugar {
+  color: black;
+  font-size: 16pt;
+  margin-bottom: 3%;
+  --placeholder-color: black;
+  --placeholder-opacity: 70%;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.4);
+  --background: white;
+  border-width: 1px;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5%;
+  padding: 20px;
+  --padding-start: 5%;
+}
+
+.butao {
+  width: 100%;
+  font-size: 16pt;
+  font-weight: bold;
+  font-style: normal;
+  color: white;
+  margin-top: 3%;
+  --background: red;
+  --background-activated: rgb(165, 16, 16);
+}
+
+.background {
+  background-image: url("../../../assets/fundinho.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.logo {
+  content: url("../../../assets/WEFOOD-nomevermelho.png");
+  width: 70%;
+  margin-left: 15%;
+  padding-top: 20%;
+}
+
+.Aviso {
+  color: rgb(255, 0, 0);
+  align-content: center;
+}

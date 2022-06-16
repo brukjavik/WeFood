@@ -1,0 +1,49 @@
+.background {
+    background: rgb(237, 237, 237);
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+.toolbarModel {
+    --background: rgb(237, 237, 237);
+}
+
+.backbuttonModel {
+    --background: transparent;
+    --color: red;
+    font-size: 13pt;
+  }
+
+.centralizadora{
+
+    align-items: center;
+    text-align: center;
+}
+
+.seguradorPesquisa {
+    color: black;
+    font-size: 16pt;
+    margin-bottom: 5%;
+    --placeholder-color: black;
+    --placeholder-opacity: 70%;
+    border-radius: 15px;
+    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.4);
+    --background: white;
+    border-width: 1px;
+    flex-direction: row;
+    width: 100%;
+    --padding-start: 3%;
+  }
+
+.pacin{
+
+    padding-top: 5%;
+}
+
+.butaoFiltro {
+    --background: red;
+    --background-activated: rgb(128, 8, 8);
+    --transition: 0.5s;
+    font-size: 16pt;
+  }

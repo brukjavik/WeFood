@@ -1,0 +1,120 @@
+.background {
+  background: url("../../../../assets/fundinho4.png") no-repeat center center
+    fixed;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.segmentbutao {
+  --background: rgb(239, 239, 239);
+  --background-checked: red;
+  --color: red;
+  --color-checked: rgb(239, 239, 239);
+  --border-color: red;
+  padding-bottom: 4%;
+  padding-top: 4%;
+  font-size: 15pt;
+  width: 70%;
+  --transition: 1s;
+}
+
+.segmentorganizer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
+.choice {
+  font-size: 15pt;
+  font-weight: normal;
+  align-self: center;
+  text-align: center;
+  padding-top: 10%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.seguradorLugar {
+  color: black;
+  font-size: 16pt;
+  margin-bottom: 3%;
+  --placeholder-color: black;
+  --placeholder-opacity: 70%;
+  border-radius: 15px;
+  box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.4);
+  --background: white;
+  border-width: 1px;
+  flex-direction: row;
+  width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5%;
+  padding: 20px;
+  --padding-start: 5%;
+}
+
+.butao {
+  width: 70%;
+  font-size: 16pt;
+  font-weight: bold;
+  font-style: normal;
+  padding-left: 30%;
+  color: white;
+  margin-top: 3%;
+  --background: red;
+  --background-activated: rgb(165, 16, 16);
+}
+
+.Aviso {
+  color: rgb(255, 0, 0);
+  align-content: center;
+}
+
+.toolbarModel {
+  --background: rgb(237, 237, 237);
+}
+
+.backbuttonModel {
+  --background: transparent;
+  --color: red;
+  font-size: 13pt;
+}
+
+.itemManager {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  --background: rgb(237, 237, 237);
+  inset: none;
+  --inner-border-width: 0px;
+  --border-width: 0px;
+  --border-color: transparent;
+}
+
+.labelManager {
+  color: black;
+  --color-checked: white;
+  --color: white;
+  background-color: transparent;
+}
+
+.radioManager {
+  background-color: white;
+  --color-checked: red;
+  --border-radius: 20px;
+  border-color: orange;
+  border: 20px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.titleManager {
+  font-size: 16pt;
+  margin-left: 16%;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: none;
+}

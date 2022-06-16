@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Alterar Nome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="background">
+  <div class="pacin"><ion-input class="seguradorPesquisa" [(ngModel)]="nomee" placeholder="Digite aqui o seu novo nome"></ion-input></div>
+  <div class="centralizadora"><ion-button class="butaoFiltro" (click)="botao()">Confirmar</ion-button></div>  
+  </div>
+</ion-content>

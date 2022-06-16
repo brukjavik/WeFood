@@ -1,0 +1,68 @@
+<ion-header>
+  <div *ngIf="tipo === 0">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-button class="butaozao" routerLink="/members/carrinho" slot="end">
+        <ion-icon class="iconezin" slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+
+      <ion-title>Início</ion-title>
+    </ion-toolbar>
+  </div>
+
+  <div *ngIf="tipo === 1">
+    <ion-toolbar class="toolbarModel">
+      <ion-buttons slot="start">
+        <ion-button (click)="logout()">
+          <ion-icon class="iconezin" slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-title>Seu restaurante</ion-title>
+    </ion-toolbar>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="background">
+    <div class="metin2">
+      <div class="titlezin">Configurações:</div>
+    </div>
+
+    <ion-button class="butaozineo" expand="block" routerLink="altera-nome">
+      Alterar Nome
+    </ion-button>
+
+    <ion-button class="butaozineo" expand="block" routerLink="altera-endereco">
+      Alterar Endereço
+    </ion-button>
+    <ion-button class="butaozineo" expand="block" routerLink="altera-senha">
+      Alterar Senha
+    </ion-button>
+
+    <div *ngIf="tipo===0">
+      <ion-button
+        class="butaozineo"
+        expand="block"
+        (click)="excluirContaUSER()"
+      >
+        Excluir Conta
+      </ion-button>
+    </div>
+
+    <div *ngIf="tipo===1">
+      <ion-button
+        class="butaozineo"
+        expand="block"
+        (click)="excluirContaREST()"
+      >
+        Excluir Conta
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar class="toolbarModel">
+    <ion-buttons slot="start">
+      <ion-back-button
+        class="backbuttonModel"
+        defaultHref="/home"
+        text="Voltar"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Pratos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="contente">
+  <div class="background">
+    <div class="rihanna">{{nome}}</div>
+    <br />
+    <div class="rihannaPoser">Descrição:</div>
+    <div class="rihanna22">{{prato.descricao}}</div>
+    <br />
+    <br />
+    <div class="copeira" *ngIf="prato.promocao === 1">
+      PRATO EM PROMOÇÃO!!!
+    </div>
+    <br />
+
+    <div class="rihannaPoser">Preço:</div>
+    <div class="rihanna22">R${{prato.preco}}</div>
+    <br /><br />
+
+    <div *ngIf="tipo === 0">
+      <div class="tadememe">
+        <div class="rihannaPoser">Quantidade:</div>
+        <div class="rihanna22">{{quantidade}}</div>
+      </div>
+      <br />
+      <div class="tadememe">
+        <ion-button class="xexe2" (click)="addQuant()">+</ion-button> &nbsp;
+        <ion-button class="xexe2" (click)="subQuant()">-</ion-button>
+      </div>
+      <br />
+      <div class="tadememe">
+        <ion-button class="xexe" (click)="adicionaCarrinho()"
+          >Adicionar ao carrinho</ion-button
+        >
+      </div>
+    </div>
+
+    <div class="tryon" *ngIf="tipo === 1">
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      &nbsp;
+      <ion-button class="xexe2" routerLink="editar">Editar</ion-button>
+      &nbsp; &nbsp;
+      <ion-button class="xexe2" (click)="excluirPrato()">Excluir</ion-button>
+    </div>
+
+    <br />
+  </div>
+</ion-content>
